@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>動画ページ</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+    #content {
+      display: none;
+    }
+    input[type="password"] {
+      padding: 10px;
+      font-size: 16px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+    iframe {
+      width: 90%;
+      height: 360px;
+      border: none;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h2>パスワードを入力してください</h2>
+  <p>実家の喫茶店の名前（カタカナ3文字）は？</p>
+  <input type="password" id="passwordInput" placeholder="パスワード">
+  <button onclick="checkPassword()">送信</button>
+
+  <div id="content">
+    <h3>動画はこちら</h3>
+    <iframe src="https://drive.google.com/drive/folders/100LUQR8VMw8SCHN-YSRItDbiT4W7G0i7/preview" allow="autoplay"></iframe>
+  </div>
+
+  <script>
+    function checkPassword() {
+      const password = document.getElementById("passwordInput").value;
+      if (password === "イッツ") {
+        document.getElementById("content").style.display = "block";
+      } else {
+        alert("パスワードが違います");
+      }
+    }
+  </script>
+</body>
+</html>
